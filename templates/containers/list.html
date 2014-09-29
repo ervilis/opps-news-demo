@@ -1,0 +1,27 @@
+{% extends "containers/base.html" %}
+
+{% block content %}
+
+{% include "channels/include/menu.html" %}
+
+<div class="row-fluid">
+  <div class="span12">
+    <ul class="thumbnails">
+    {% for container in context %}
+      <li class="span3">
+        <div class="thumbnail">
+            <img alt="{{ container.main_image.title }}" title="{{ container.main_image.title }}" src="{{container.main_image.image_url }}">
+          <div class="caption">
+            <h3>{{ container.hat }}</h3>
+            <p>
+              <a href="{% url 'containers:open' container.channel.long_slug container.slug %}" alt="{{ container.short_title }}">{{ container.title }}</a>
+            </p>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+    </ul>
+    {% include 'containers/include/paginated.html' %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,5 @@
+opps>=0.2
+git+https://github.com/opps/opps-comments.git#egg=opps-comments
+BeautifulSoup==3.2.1
+requests==2.4.1
+feedparser==5.1.3
